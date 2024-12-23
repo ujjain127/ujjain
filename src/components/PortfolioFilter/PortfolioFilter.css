@@ -1,0 +1,32 @@
+.portfolio-filter {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 32px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.filter-button {
+  padding: 8px 16px;
+  border: 1px solid #5E3BEE;
+  border-radius: 24px;
+  background: transparent;
+  color: #5E3BEE;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.filter-button.active {
+  background: #5E3BEE;
+  color: white;
+}
+
+.active-indicator {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: #5E3BEE;
+} 

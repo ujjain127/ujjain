@@ -1,0 +1,43 @@
+.mobile-menu-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 998;
+  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
+}
+
+.mobile-menu {
+  position: fixed;
+  top: 120px;
+  left: 0;
+  right: 0;
+  background: white;
+  padding: 24px;
+  z-index: 999;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 0 0 16px 16px;
+}
+
+.mobile-menu-link {
+  display: block;
+  padding: 16px;
+  font-size: 18px;
+  color: #1C1E53;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border-radius: 8px;
+}
+
+.mobile-menu-link:hover {
+  background: #F5FCFF;
+  color: #5E3BEE;
+}
+
+.mobile-menu-link.active {
+  color: #5E3BEE;
+  background: #F5FCFF;
+} 
