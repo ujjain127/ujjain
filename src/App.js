@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Navbar from './components/Navbar/Navbar';
 import Hero from './components/Hero/Hero';
 import SkillsProgress from './components/SkillsProgress/SkillsProgress';
@@ -13,6 +13,10 @@ import Experience from './components/Experience/Experience';
 import './App.css';
 
 function App() {
+  useEffect(() => {
+    document.title = "Ujjain S";
+  }, []);
+
   return (
     <div className="App">
       <Navbar />
