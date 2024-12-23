@@ -1,5 +1,6 @@
 {
-  "name": "portfolio",
+  "homepage": "https://ujjain127.github.io/ujjain",
+  "name": "ujjain",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -45,5 +46,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "gh-pages": "^6.2.0"
   }
 }
