@@ -1,52 +1,58 @@
 .about {
   padding: 120px 0;
-  background: #FFFFFF;
+  background: var(--bg-darker);
 }
 
 .about-container {
-  max-width: 1750px;
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 0 85px;
-}
-
-.about-content {
-  display: flex;
+  padding: 0 24px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
   align-items: center;
-  gap: 64px;
-}
-
-.about-text {
-  flex: 1;
-}
-
-.about-description {
-  font-size: 18px;
-  line-height: 1.6;
-  color: #1C1E53;
-  margin: 24px 0 32px;
-}
-
-.skills-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 16px;
-}
-
-.skill-tag {
-  background: #F5FCFF;
-  color: #5E3BEE;
-  padding: 12px 24px;
-  border-radius: 5px;
-  font-size: 16px;
-  font-weight: 500;
 }
 
 .about-image {
-  flex: 1;
+  position: relative;
 }
 
 .about-image img {
   width: 100%;
   height: auto;
-  border-radius: 10px;
+  border-radius: 16px;
+  border: 2px solid var(--border-orange);
+}
+
+.about-content {
+  color: var(--text-white);
+}
+
+.about-description {
+  color: var(--text-light);
+  margin-bottom: 32px;
+  line-height: 1.6;
+}
+
+.download-cv {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--primary-orange);
+  color: var(--text-white);
+  padding: 12px 24px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.download-cv:hover {
+  background: var(--accent-orange-dark);
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  .about-container {
+    grid-template-columns: 1fr;
+  }
 } 

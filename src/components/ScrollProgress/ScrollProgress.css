@@ -4,13 +4,7 @@
   left: 0;
   right: 0;
   height: 3px;
-  background: #5E3BEE;
+  background: var(--primary-orange);
   transform-origin: 0%;
   z-index: 1000;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.progress-bar.visible {
-  opacity: 1;
 } 
