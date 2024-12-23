@@ -9,37 +9,31 @@ function Portfolio() {
     triggerOnce: true
   });
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2
-      }
-    }
-  };
-
-  const projectVariants = {
-    hidden: { opacity: 0, y: 50 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.5
-      }
-    }
-  };
-
   const projects = [
     {
       id: 1,
-      title: "Project Management Dashboard",
-      description: "This is a sample project description. Lorem ipsum dolor sit amet.",
-      image: "/project1.jpg",
-      category: "Web Design",
-      link: "#"
+      title: "Mr.Pulse",
+      description: "A comprehensive healthcare monitoring system integrating IoT devices with a mobile application. Built using Flutter and Firebase, it enables real-time health tracking and emergency alerts for patients.",
+      technologies: ["Flutter", "Firebase", "IoT", "Health Monitoring"]
     },
-    // Add more projects
+    {
+      id: 2,
+      title: "Better Wealth",
+      description: "A modern financial advisory website that connects users with expert financial advisors. Features include personalized investment recommendations, portfolio tracking, and interactive financial planning tools. The platform helps users make informed decisions about their financial future.",
+      technologies: ["React", "Node.js", "MongoDB", "Financial APIs"]
+    },
+    {
+      id: 3,
+      title: "Payroll Automation",
+      description: "Developed automated solutions for streamlining business processes, including document processing, data extraction, and workflow automation. Achieved significant reduction in manual processing time.",
+      technologies: ["UiPath", "Excel Automation", "PDF Processing", "RPA"]
+    },
+    {
+      id: 4,
+      title: "Shiksha Samriddhi",
+      description: "Developed a comprehensive web application for educational institutions, providing a platform for seamless online learning and resource sharing. Implemented features such as course management, student progress tracking, and interactive learning tools.",
+      technologies: ["React", "Node.js", "MongoDB", "Web Development"]
+    }
   ];
 
   return (
@@ -47,50 +41,37 @@ function Portfolio() {
       <motion.div 
         className="portfolio-container"
         ref={ref}
-        variants={containerVariants}
-        initial="hidden"
-        animate={inView ? "visible" : "hidden"}
+        initial={{ opacity: 0 }}
+        animate={inView ? { opacity: 1 } : { opacity: 0 }}
+        transition={{ duration: 0.6 }}
       >
-        <motion.div 
-          className="portfolio-header"
-          variants={projectVariants}
-        >
+        <motion.div className="portfolio-header">
           <span className="section-subtitle">My Work</span>
           <h2 className="section-title">Featured Projects</h2>
           <p className="section-description">
-            I help companies and organizations build modern, 
-            responsive websites and applications.
+            Here are some of the key projects I've worked on, showcasing my 
+            skills in development, automation, and problem-solving.
           </p>
         </motion.div>
         
         <div className="projects-grid">
           {projects.map(project => (
             <motion.div 
-              key={project.id} 
+              key={project.id}
               className="project-card"
-              variants={projectVariants}
-              whileHover={{ 
-                y: -10,
-                transition: { duration: 0.3 }
-              }}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              viewport={{ once: true }}
             >
-              <div className="project-image">
-                <img src={project.image} alt={project.title} />
-              </div>
               <div className="project-content">
-                <span className="project-category">{project.category}</span>
                 <h3 className="project-title">{project.title}</h3>
                 <p className="project-description">{project.description}</p>
-                <motion.a 
-                  href={project.link} 
-                  className="view-project"
-                  whileHover={{ x: 5 }}
-                >
-                  View Project
-                  <svg className="arrow-icon" viewBox="0 0 24 24">
-                    <path d="M16.01 11H4v2h12.01v3L20 12l-3.99-4v3z" />
-                  </svg>
-                </motion.a>
+                <div className="project-tech">
+                  {project.technologies.map((tech, index) => (
+                    <span key={index} className="tech-tag">{tech}</span>
+                  ))}
+                </div>
               </div>
             </motion.div>
           ))}

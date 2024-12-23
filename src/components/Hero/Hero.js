@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import heroImage from '../../assets/hero/hero.png';
 import './Hero.css';
 
 function Hero() {
@@ -35,20 +36,22 @@ function Hero() {
         <div className="hero-content">
           <div className="hero-text">
             <motion.h1 variants={itemVariants}>
-              Hi, I am John
+              Hi, I am Ujjain
             </motion.h1>
             <motion.h2 variants={itemVariants}>
-              I create product design and brand experience
+              Pre-Final Year Student at Rajalakshmi Engineering College
             </motion.h2>
             <motion.p variants={itemVariants}>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-              Suspendisse varius enim in eros elementum tristique.
+              A passionate developer focused on creating interactive web applications 
+              and efficient automation solutions. Currently exploring machine learning 
+              while mastering full-stack development.
             </motion.p>
             <motion.button 
               className="get-in-touch"
               variants={itemVariants}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
+              onClick={() => document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })}
             >
               Get In Touch
             </motion.button>
@@ -59,7 +62,7 @@ function Hero() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <img src="/path-to-your-image.jpg" alt="Hero" />
+            <img src={heroImage} alt="Hero" />
           </motion.div>
         </div>
       </motion.div>

@@ -3,6 +3,8 @@ import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faGithub, faLinkedin, faInstagram } from '@fortawesome/free-brands-svg-icons';
 import './Contact.css';
 
 function Contact() {
@@ -71,9 +73,10 @@ function Contact() {
           variants={containerVariants}
         >
           <span className="section-subtitle">Contact</span>
-          <h2 className="section-title">Get In Touch</h2>
+          <h2 className="section-title">Let's Connect</h2>
           <p className="section-description">
-            Let's discuss your project and see how I can help bring your ideas to life.
+            Whether you're interested in my projects, have a collaboration idea, 
+            or just want to connect, feel free to reach out through any of these platforms.
           </p>
         </motion.div>
 
@@ -152,11 +155,40 @@ function Contact() {
           >
             <div className="info-item">
               <h3>Email</h3>
-              <p>hello@example.com</p>
+              <p>ujjainsriganesh@gmail.com</p>
             </div>
             <div className="info-item">
               <h3>Location</h3>
-              <p>San Francisco, CA</p>
+              <p>Chennai, Tamil Nadu, India</p>
+            </div>
+            <div className="info-item">
+              <h3>Social Media</h3>
+              <div className="social-links">
+                <a 
+                  href="https://github.com/ujjain127" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="social-link"
+                >
+                  <FontAwesomeIcon icon={faGithub} />
+                </a>
+                <a 
+                  href="https://www.linkedin.com/in/ujjain-s-41b577242/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="social-link"
+                >
+                  <FontAwesomeIcon icon={faLinkedin} />
+                </a>
+                <a 
+                  href="https://instagram.com/ujjainsriganesh" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="social-link"
+                >
+                  <FontAwesomeIcon icon={faInstagram} />
+                </a>
+              </div>
             </div>
           </motion.div>
         </div>

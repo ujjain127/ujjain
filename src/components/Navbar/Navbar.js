@@ -1,28 +1,49 @@
 import React, { useState, useEffect } from 'react';
-import { Link as ScrollLink } from 'react-scroll';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import './Navbar.css';
 
 function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [activeSection, setActiveSection] = useState('home');
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  const navItems = [
+    { id: 'home', label: 'Home' },
+    { id: 'about', label: 'About' },
+    { id: 'portfolio', label: 'Projects' },
+    { id: 'experience', label: 'Experience' },
+    { id: 'gallery', label: 'Gallery' }
+  ];
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
+
+      const sections = navItems.map(item => document.getElementById(item.id));
+      const scrollPosition = window.scrollY + 100;
+
+      sections.forEach(section => {
+        if (section) {
+          const sectionTop = section.offsetTop;
+          const sectionHeight = section.clientHeight;
+          if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+            setActiveSection(section.id);
+          }
+        }
+      });
     };
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const navLinks = [
-    { title: 'Home', to: 'hero' },
-    { title: 'Portfolio', to: 'portfolio' },
-    { title: 'About', to: 'about' },
-    { title: 'Testimonials', to: 'testimonials' },
-    { title: 'Contact', to: 'contact' }
-  ];
+  const scrollToSection = (sectionId) => {
+    const section = document.getElementById(sectionId);
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });
+    }
+    setIsMobileMenuOpen(false);
+  };
 
   return (
     <motion.nav 
@@ -31,93 +52,39 @@ function Navbar() {
       animate={{ y: 0 }}
       transition={{ duration: 0.5 }}
     >
-      <div className="container">
-        <motion.div 
-          className="logo"
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-        >
-          <ScrollLink 
-            to="hero"
-            smooth={true}
-            duration={500}
-            offset={-70}
-            className="cursor-pointer"
-          >
-            {/* Your logo */}
-          </ScrollLink>
-        </motion.div>
-
-        <div className="nav-links">
-          {navLinks.map(({ title, to }) => (
-            <motion.div
-              key={to}
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <ScrollLink
-                to={to}
-                spy={true}
-                smooth={true}
-                offset={-70}
-                duration={500}
-                activeClass="active"
-                className="nav-link"
-              >
-                {title}
-              </ScrollLink>
-            </motion.div>
-          ))}
+      <div className="navbar-container">
+        <div className="nav-toggle" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
+          <div className={`hamburger ${isMobileMenuOpen ? 'active' : ''}`}>
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
         </div>
 
-        <motion.button 
-          className="contact-button"
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-          onClick={() => {
-            // Scroll to contact section
-            const scroller = new ScrollLink().scrollTo('contact');
-            scroller({ smooth: true, duration: 500, offset: -70 });
-          }}
-        >
-          Contact Me
-        </motion.button>
-
-        {/* Mobile Menu Button */}
-        <div 
-          className="mobile-menu-button"
-          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-        >
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-
-        {/* Mobile Menu */}
-        {isMobileMenuOpen && (
+        <AnimatePresence>
           <motion.div 
-            className="mobile-menu"
+            className={`nav-links ${isMobileMenuOpen ? 'active' : ''}`}
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.3 }}
           >
-            {navLinks.map(({ title, to }) => (
-              <ScrollLink
-                key={to}
-                to={to}
-                spy={true}
-                smooth={true}
-                offset={-70}
-                duration={500}
-                activeClass="active"
-                className="mobile-nav-link"
-                onClick={() => setIsMobileMenuOpen(false)}
+            {navItems.map((item) => (
+              <motion.a
+                key={item.id}
+                href={`#${item.id}`}
+                className={activeSection === item.id ? 'active' : ''}
+                onClick={(e) => {
+                  e.preventDefault();
+                  scrollToSection(item.id);
+                }}
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.95 }}
               >
-                {title}
-              </ScrollLink>
+                {item.label}
+              </motion.a>
             ))}
           </motion.div>
-        )}
+        </AnimatePresence>
       </div>
     </motion.nav>
   );

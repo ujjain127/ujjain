@@ -1,0 +1,173 @@
+.experience {
+  padding: 6rem 0;
+  background: var(--bg-dark);
+}
+
+.experience-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.experience-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.timeline {
+  position: relative;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.timeline:before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    var(--primary-orange),
+    rgba(255, 140, 0, 0.1)
+  );
+}
+
+.timeline-item {
+  margin-bottom: 3rem;
+  position: relative;
+  width: 50%;
+}
+
+.timeline-item:nth-child(odd) {
+  padding-right: 3rem;
+  margin-left: 0;
+}
+
+.timeline-item:nth-child(even) {
+  margin-left: 50%;
+  padding-left: 3rem;
+}
+
+.timeline-content {
+  background: var(--bg-card);
+  padding: 2rem;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-dark);
+  position: relative;
+  transition: var(--transition-normal);
+}
+
+.timeline-content:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  border-color: var(--primary-orange);
+}
+
+.timeline-content:before {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: var(--primary-orange);
+  border-radius: 50%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.timeline-item:nth-child(odd) .timeline-content:before {
+  right: -3.5rem;
+}
+
+.timeline-item:nth-child(even) .timeline-content:before {
+  left: -3.5rem;
+}
+
+.role {
+  color: var(--primary-orange);
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+}
+
+.company-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.company {
+  color: var(--text-white);
+  font-weight: 500;
+}
+
+.duration {
+  color: var(--text-light);
+  font-size: 0.9rem;
+}
+
+.responsibilities {
+  list-style: none;
+  padding: 0;
+}
+
+.responsibilities li {
+  color: var(--text-light);
+  margin-bottom: 0.8rem;
+  padding-left: 1.5rem;
+  position: relative;
+  line-height: 1.6;
+}
+
+.responsibilities li:before {
+  content: "•";
+  color: var(--primary-orange);
+  position: absolute;
+  left: 0;
+}
+
+@media (max-width: 768px) {
+  .timeline:before {
+    left: 0;
+  }
+
+  .timeline-item {
+    width: 100%;
+    margin-left: 0;
+    padding-left: 2rem;
+  }
+
+  .timeline-item:nth-child(even) {
+    margin-left: 0;
+    padding-left: 2rem;
+  }
+
+  .timeline-item:nth-child(odd) {
+    padding-right: 0;
+  }
+
+  .timeline-content:before {
+    left: -2.5rem !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .experience {
+    padding: 4rem 0;
+  }
+
+  .timeline-content {
+    padding: 1.5rem;
+  }
+
+  .role {
+    font-size: 1.1rem;
+  }
+
+  .company-info {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+} 

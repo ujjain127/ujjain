@@ -1,86 +1,98 @@
 .hero {
-  padding: 160px 0 120px;
-  background: var(--bg-darker);
-  position: relative;
-  overflow: hidden;
+  min-height: 100vh;
+  padding: 4rem 2rem;
+  background-color: #1a1a1a;
 }
 
 .hero-container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 24px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 48px;
-  align-items: center;
 }
 
 .hero-content {
-  z-index: 1;
-}
-
-.hero-subtitle {
-  color: var(--primary-orange);
-  font-size: 18px;
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  margin-bottom: 16px;
-}
-
-.hero-title {
-  color: var(--text-white);
-  font-size: 48px;
-  font-weight: 700;
-  line-height: 1.2;
-  margin-bottom: 24px;
-}
-
-.hero-description {
-  color: var(--text-light);
-  font-size: 18px;
-  line-height: 1.6;
-  margin-bottom: 32px;
-}
-
-.hero-buttons {
   display: flex;
-  gap: 16px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.hero-text {
+  flex: 1;
+  max-width: 600px;
+}
+
+.hero-text h1 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 1rem;
+}
+
+.hero-text h2 {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #ff8c00;
+  margin-bottom: 1.5rem;
+}
+
+.hero-text p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #e0e0e0;
+  margin-bottom: 2rem;
 }
 
 .hero-image {
-  position: relative;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .hero-image img {
-  width: 100%;
+  max-width: 100%;
   height: auto;
-  border-radius: 16px;
-  border: 2px solid var(--border-orange);
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(255, 140, 0, 0.2);
 }
 
-.hero-background {
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 50%;
-  height: 100%;
-  background: linear-gradient(45deg, var(--accent-orange-light), transparent);
-  opacity: 0.1;
-  z-index: 0;
+.get-in-touch {
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  background-color: #ff8c00;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
+.get-in-touch:hover {
+  background-color: #ffa500;
+  transform: translateY(-2px);
+}
+
+/* Responsive Design */
 @media (max-width: 768px) {
-  .hero-container {
-    grid-template-columns: 1fr;
+  .hero-content {
+    flex-direction: column-reverse;
     text-align: center;
   }
 
-  .hero-buttons {
-    justify-content: center;
+  .hero-text h1 {
+    font-size: 2.5rem;
   }
 
-  .hero-title {
-    font-size: 36px;
+  .hero-text h2 {
+    font-size: 1.5rem;
+  }
+
+  .hero-image {
+    margin-bottom: 2rem;
+  }
+
+  .hero-image img {
+    max-width: 80%;
   }
 } 
