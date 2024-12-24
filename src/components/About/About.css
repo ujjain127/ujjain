@@ -247,4 +247,25 @@
   .skills-section {
     padding: 1.5rem;
   }
+}
+
+[data-theme="light"] .about-content p {
+  color: var(--text-light);
+}
+
+[data-theme="light"] .about-stats {
+  background: var(--card-bg);
+  box-shadow: var(--shadow-md);
+}
+
+[data-theme="light"] .stat-value {
+  color: var(--text-dark);
+}
+
+[data-theme="light"] .stat-label {
+  color: var(--text-light);
+}
+
+[data-theme="light"] .about-description {
+  color: var(--text-light);
 } 

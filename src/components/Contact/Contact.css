@@ -220,4 +220,26 @@
   .section-title {
     font-size: 1.8rem;
   }
+}
+
+/* Add these light theme styles */
+[data-theme="light"] .contact-form {
+  background: var(--card-bg);
+  box-shadow: var(--shadow-md);
+}
+
+[data-theme="light"] .form-group label {
+  color: var(--text-dark);
+}
+
+[data-theme="light"] .form-group input,
+[data-theme="light"] .form-group textarea {
+  background: var(--bg-dark);
+  border: 1px solid var(--border-dark);
+  color: var(--text-dark);
+}
+
+[data-theme="light"] .form-group input:focus,
+[data-theme="light"] .form-group textarea:focus {
+  border-color: var(--primary-orange);
 } 

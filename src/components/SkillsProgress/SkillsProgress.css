@@ -170,3 +170,19 @@
 .skill-card:nth-child(4) .skill-icon {
   color: #FF6B6B; /* ML coral */
 }
+
+/* Add these light theme styles */
+[data-theme="light"] .skill-card {
+  background-color: var(--card-bg);
+  box-shadow: var(--shadow-md);
+}
+
+[data-theme="light"] .skill-description {
+  color: var(--text-light);
+}
+
+[data-theme="light"] .tech-item {
+  background: var(--accent-orange-light);
+  color: var(--primary-orange);
+  border: 1px solid var(--border-orange);
+}

@@ -56,23 +56,6 @@
   box-shadow: 0 20px 40px rgba(255, 140, 0, 0.2);
 }
 
-.get-in-touch {
-  padding: 1rem 2rem;
-  font-size: 1.1rem;
-  font-weight: 600;
-  color: #1a1a1a;
-  background-color: #ff8c00;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.get-in-touch:hover {
-  background-color: #ffa500;
-  transform: translateY(-2px);
-}
-
 /* Responsive Design */
 @media (max-width: 768px) {
   .hero-content {
@@ -95,4 +78,50 @@
   .hero-image img {
     max-width: 80%;
   }
+}
+
+/* Add these light theme styles */
+[data-theme="light"] .hero {
+  background: var(--bg-dark);
+}
+
+[data-theme="light"] .hero-title {
+  color: var(--text-dark);
+}
+
+[data-theme="light"] .hero-subtitle {
+  color: var(--primary-orange);
+}
+
+[data-theme="light"] .hero-description {
+  color: var(--text-light);
+}
+
+[data-theme="light"] .cta-button {
+  background: var(--primary-orange);
+  color: white;
+}
+
+[data-theme="light"] .cta-button:hover {
+  background: var(--accent-orange-dark);
+}
+
+[data-theme="light"] .hero-social-links a {
+  color: var(--text-dark);
+}
+
+[data-theme="light"] .hero-social-links a:hover {
+  color: var(--primary-orange);
+}
+
+[data-theme="light"] .hero-text h1 {
+  color: var(--text-dark);
+}
+
+[data-theme="light"] .hero-text h2 {
+  color: var(--primary-orange);
+}
+
+[data-theme="light"] .hero-text p {
+  color: var(--text-light);
 } 

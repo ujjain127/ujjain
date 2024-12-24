@@ -4,6 +4,30 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCode, faServer, faLaptopCode, faMicrochip } from '@fortawesome/free-solid-svg-icons';
 import './SkillsProgress.css';
 
+// Use constants for repeated values
+const SECTION_ANIMATION_DELAY = 0.2;
+const BREAKPOINTS = {
+  mobile: '480px',
+  tablet: '768px',
+  desktop: '1024px'
+};
+
+// Create reusable components
+function SectionTitle({ subtitle, title }) {
+  return (
+    <div className="section-header">
+      <span className="section-subtitle">{subtitle}</span>
+      <h2 className="section-title">{title}</h2>
+    </div>
+  );
+}
+
+/**
+ * @component Portfolio
+ * @description Displays portfolio projects in a grid layout
+ * @param {Object[]} projects - Array of project objects
+ * @returns {JSX.Element}
+ */
 function SkillsProgress() {
   const skills = [
     {

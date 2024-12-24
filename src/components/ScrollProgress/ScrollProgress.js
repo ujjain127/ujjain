@@ -1,14 +1,15 @@
 import React, { useState, useEffect } from 'react';
-import { motion, useScroll } from 'framer-motion';
 import './ScrollProgress.css';
 
 function ScrollProgress() {
-  const { scrollYProgress } = useScroll();
-  const [isVisible, setIsVisible] = useState(false);
+  const [scrollProgress, setScrollProgress] = useState(0);
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsVisible(window.scrollY > 100);
+      const totalScroll = document.documentElement.scrollHeight - window.innerHeight;
+      const currentScroll = window.pageYOffset;
+      const progress = (currentScroll / totalScroll) * 100;
+      setScrollProgress(progress);
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -16,10 +17,12 @@ function ScrollProgress() {
   }, []);
 
   return (
-    <motion.div
-      className={`progress-bar ${isVisible ? 'visible' : ''}`}
-      style={{ scaleX: scrollYProgress }}
-    />
+    <div className="scroll-progress">
+      <div 
+        className="scroll-progress-bar" 
+        style={{ width: `${scrollProgress}%` }}
+      />
+    </div>
   );
 }
 

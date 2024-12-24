@@ -46,15 +46,6 @@ function Hero() {
               and efficient automation solutions. Currently exploring machine learning 
               while mastering full-stack development.
             </motion.p>
-            <motion.button 
-              className="get-in-touch"
-              variants={itemVariants}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              onClick={() => document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })}
-            >
-              Get In Touch
-            </motion.button>
           </div>
           <motion.div 
             className="hero-image"

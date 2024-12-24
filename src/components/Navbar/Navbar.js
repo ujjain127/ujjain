@@ -8,11 +8,12 @@ function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const navItems = [
-    { id: 'home', label: 'Home' },
+    { id: 'hero', label: 'Home' },
     { id: 'about', label: 'About' },
     { id: 'portfolio', label: 'Projects' },
     { id: 'experience', label: 'Experience' },
-    { id: 'gallery', label: 'Gallery' }
+    { id: 'gallery', label: 'Gallery' },
+    { id: 'contact', label: 'Contact' }
   ];
 
   useEffect(() => {
