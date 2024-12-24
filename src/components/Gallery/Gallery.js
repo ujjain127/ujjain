@@ -23,7 +23,7 @@ function Gallery() {
   });
 
   const [selectedImage, setSelectedImage] = useState(null);
-  const [activeCategory, setActiveCategory] = useState('all');
+  const [activeCategory, setActiveCategory] = useState('IEEE Events');
 
   const galleryImages = [
     {
@@ -83,15 +83,12 @@ function Gallery() {
   ];
 
   const categories = [
-    { id: 'all', label: 'All Photos' },
     { id: 'IEEE Events', label: 'IEEE Events' },
     { id: 'UiPhoria', label: 'UiPhoria' },
     { id: 'Personal', label: 'Personal' }
   ];
 
-  const filteredImages = activeCategory === 'all' 
-    ? galleryImages 
-    : galleryImages.filter(img => img.category === activeCategory);
+  const filteredImages = galleryImages.filter(img => img.category === activeCategory);
 
   const breakpointColumns = {
     default: 3,

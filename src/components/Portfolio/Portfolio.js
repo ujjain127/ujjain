@@ -25,14 +25,14 @@ function Portfolio() {
     {
       id: 3,
       title: "Payroll Automation",
-      description: "Developed automated solutions for streamlining business processes, including document processing, data extraction, and workflow automation. Achieved significant reduction in manual processing time.",
-      technologies: ["UiPath", "Excel Automation", "PDF Processing", "RPA"]
+      description: "Developed an automated payroll system using UiPath to streamline employee payslip generation. The solution automatically processes salary calculations, tax deductions, and generates detailed payslips, reducing manual effort and improving accuracy. Achieved 80% reduction in processing time.",
+      technologies: ["UiPath", "Excel Automation", "PDF Processing", "Email Automation"]
     },
     {
       id: 4,
       title: "Shiksha Samriddhi",
-      description: "Developed a comprehensive web application for educational institutions, providing a platform for seamless online learning and resource sharing. Implemented features such as course management, student progress tracking, and interactive learning tools.",
-      technologies: ["React", "Node.js", "MongoDB", "Web Development"]
+      description: "Created a standardization system for odd schools to improve educational quality and consistency. The project focuses on implementing standardized teaching methodologies, assessment systems, and resource management across different schools, helping them achieve better academic outcomes.",
+      technologies: ["React", "Flask", "MongoDB", "Machine Learning"]
     }
   ];
 

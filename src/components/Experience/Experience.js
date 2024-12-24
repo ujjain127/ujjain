@@ -16,10 +16,11 @@ function Experience() {
       company: "IEEE TEMS REC",
       duration: "Jun 2023 - Dec 2024",
       description: [
-        "Developed and implemented automated solutions using UiPath Studio",
-        "Worked on process automation for document processing and data extraction",
-        "Collaborated with team members to optimize automation workflows",
-        "Reduced manual processing time by 60% through automation solutions"
+        "Leading a team of 50+ members in organizing technical events and workshops",
+        "Successfully organized IEEE TEMS Inauguration with 100+ participants",
+        "Coordinated with industry experts for guest lectures and technical sessions",
+        "Implemented innovative strategies to increase student engagement in technical activities",
+        "Managing and overseeing various technical and non-technical events throughout the year"
       ]
     },
     {

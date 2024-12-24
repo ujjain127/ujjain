@@ -9,7 +9,7 @@ function SkillsProgress() {
     {
       title: "Fullstack Development",
       description: "Building responsive and interactive user interfaces",
-      technologies: ["React", "JavaScript", "HTML5", "CSS3", "Redux"],
+      technologies: ["React", "JavaScript", "HTML5", "CSS3", "Flask"],
       icon: faCode
     },
     {
@@ -21,7 +21,7 @@ function SkillsProgress() {
     {
       title: "Competitive Programming",
       description: "Solving complex problems using algorithms and data structures",
-      technologies: ["C++", "Python", "Java", "JavaScript"],
+      technologies: ["C++", "Python", "Java"],
       icon: faLaptopCode
     },
     {
