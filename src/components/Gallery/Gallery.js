@@ -1,228 +1,177 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
 import Masonry from 'react-masonry-css';
-import { LazyLoadImage } from 'react-lazy-load-image-component';
-import 'react-lazy-load-image-component/src/effects/blur.css';
 import { TransformWrapper, TransformComponent } from 'react-zoom-pan-pinch';
-import useInfiniteScroll from 'react-infinite-scroll-hook';
 import './Gallery.css';
 
+// Import images
+import image1 from '../../assets/gallery/image1.JPG';
+import image2 from '../../assets/gallery/image2.JPG';
+import image3 from '../../assets/gallery/image3.JPG';
+import image4 from '../../assets/gallery/image4.jpg';
+import image5 from '../../assets/gallery/image5.jpg';
+import image6 from '../../assets/gallery/image6.jpg';
+import image7 from '../../assets/gallery/image7.JPG';
+import image8 from '../../assets/gallery/image8.jpg';
+import image9 from '../../assets/gallery/image9.jpg';
+
 function Gallery() {
-  const [selectedImage, setSelectedImage] = useState(null);
-  const [activeFilter, setActiveFilter] = useState('all');
-  const [items, setItems] = useState([]);
-  const [page, setPage] = useState(1);
-  const [hasNextPage, setHasNextPage] = useState(true);
-  const [isLoading, setIsLoading] = useState(false);
-  const [isSlideshow, setIsSlideshow] = useState(false);
-  const [slideshowInterval, setSlideshowInterval] = useState(null);
-
-  // Define filters array
-  const filters = [
-    { id: 'all', label: 'All Works' },
-    { id: 'web', label: 'Web Design' },
-    { id: 'mobile', label: 'Mobile Apps' },
-    { id: 'branding', label: 'Branding' }
-  ];
-
-  // Simulated gallery items fetch
-  const fetchItems = useCallback(async () => {
-    setIsLoading(true);
-    // Simulate API call
-    await new Promise(resolve => setTimeout(resolve, 1000));
-    
-    const newItems = Array.from({ length: 6 }, (_, i) => ({
-      id: items.length + i + 1,
-      image: `/gallery/image${(items.length + i + 1) % 10 + 1}.jpg`,
-      category: ['web', 'mobile', 'branding'][Math.floor(Math.random() * 3)],
-      title: `Project ${items.length + i + 1}`,
-      description: 'Project description goes here'
-    }));
-
-    setItems(prev => [...prev, ...newItems]);
-    setHasNextPage(page < 3); // Limit to 3 pages for demo
-    setIsLoading(false);
-    setPage(prev => prev + 1);
-  }, [items.length, page]);
-
-  const [sentryRef] = useInfiniteScroll({
-    loading: isLoading,
-    hasNextPage,
-    onLoadMore: fetchItems,
-    disabled: !hasNextPage,
-    rootMargin: '0px 0px 200px 0px',
+  const [ref, inView] = useInView({
+    threshold: 0.2,
+    triggerOnce: true
   });
 
-  useEffect(() => {
-    fetchItems();
-  }, []);
+  const [selectedImage, setSelectedImage] = useState(null);
+  const [activeCategory, setActiveCategory] = useState('all');
 
-  const filteredItems = items.filter(item => 
-    activeFilter === 'all' ? true : item.category === activeFilter
-  );
-
-  const toggleSlideshow = () => {
-    if (isSlideshow) {
-      clearInterval(slideshowInterval);
-      setSlideshowInterval(null);
-      setIsSlideshow(false);
-    } else {
-      setIsSlideshow(true);
-      const interval = setInterval(() => {
-        setSelectedImage(current => {
-          const currentIndex = filteredItems.findIndex(item => item.id === current?.id);
-          const nextIndex = (currentIndex + 1) % filteredItems.length;
-          return filteredItems[nextIndex];
-        });
-      }, 3000);
-      setSlideshowInterval(interval);
+  const galleryImages = [
+    {
+      id: 1,
+      src: image1,
+      alt: "IEEE TEMS Inauguration",
+      category: "IEEE Events"
+    },
+    {
+      id: 2,
+      src: image2,
+      alt: "IEEE TEMS Inauguration",
+      category: "IEEE Events"
+    },
+    {
+      id: 3,
+      src: image3,
+      alt: "IEEE TEMS Inauguration",
+      category: "IEEE Events"
+    },
+    {
+      id: 4,
+      src: image4,
+      alt: "UiPath Hack-a-bot",
+      category: "UiPhoria"
+    },
+    {
+      id: 5,
+      src: image5,
+      alt: "Guest Lecture",
+      category: "UiPhoria"
+    },
+    {
+      id: 6,
+      src: image6,
+      alt: "UiPhoria Inauguration 2.0",
+      category: "UiPhoria"
+    },
+    {
+      id: 7,
+      src: image7,
+      alt: "UiPhoria Inauguration 2.0",
+      category: "UiPhoria"
+    },
+    {
+      id: 8,
+      src: image8,
+      alt: "Personal Moment 1",
+      category: "Personal"
+    },
+    {
+      id: 9,
+      src: image9,
+      alt: "Personal Moment 2",
+      category: "Personal"
     }
-  };
+  ];
 
-  useEffect(() => {
-    return () => {
-      if (slideshowInterval) clearInterval(slideshowInterval);
-    };
-  }, [slideshowInterval]);
+  const categories = [
+    { id: 'all', label: 'All Photos' },
+    { id: 'IEEE Events', label: 'IEEE Events' },
+    { id: 'UiPhoria', label: 'UiPhoria' },
+    { id: 'Personal', label: 'Personal' }
+  ];
+
+  const filteredImages = activeCategory === 'all' 
+    ? galleryImages 
+    : galleryImages.filter(img => img.category === activeCategory);
+
+  const breakpointColumns = {
+    default: 3,
+    1100: 3,
+    700: 2,
+    500: 1
+  };
 
   return (
     <section className="gallery" id="gallery">
-      <div className="gallery-container">
-        <div className="section-header">
+      <motion.div 
+        className="gallery-container"
+        ref={ref}
+        initial={{ opacity: 0 }}
+        animate={inView ? { opacity: 1 } : { opacity: 0 }}
+        transition={{ duration: 0.6 }}
+      >
+        <div className="gallery-header">
           <span className="section-subtitle">Gallery</span>
-          <h2 className="section-title">My Work Gallery</h2>
+          <h2 className="section-title">My Gallery</h2>
           <p className="section-description">
-            Explore my latest works and creative projects
+            A collection of moments from my journey in tech and leadership
           </p>
         </div>
 
-        <div className="gallery-filters">
-          {filters.map(filter => (
+        <div className="gallery-categories">
+          {categories.map(category => (
             <motion.button
-              key={filter.id}
-              className={`filter-btn ${activeFilter === filter.id ? 'active' : ''}`}
-              onClick={() => setActiveFilter(filter.id)}
+              key={category.id}
+              className={`category-btn ${activeCategory === category.id ? 'active' : ''}`}
+              onClick={() => setActiveCategory(category.id)}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              {filter.label}
-              {activeFilter === filter.id && (
-                <motion.div className="filter-underline" layoutId="underline" />
-              )}
+              {category.label}
             </motion.button>
           ))}
         </div>
 
-        <Masonry
-          breakpointCols={{
-            default: 3,
-            1100: 2,
-            700: 1
-          }}
-          className="gallery-grid"
-          columnClassName="gallery-grid-column"
-        >
-          {filteredItems.map(item => (
-            <motion.div
-              key={item.id}
-              className="gallery-item"
-              layout
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              whileHover={{ scale: 1.03 }}
-              onClick={() => setSelectedImage(item)}
-            >
-              <div className="gallery-item-image">
-                <LazyLoadImage
-                  src={item.image}
-                  alt={item.title}
-                  effect="blur"
-                  width="100%"
-                  height="100%"
-                />
-                <div className="gallery-item-overlay">
-                  <h3>{item.title}</h3>
-                  <p>{item.description}</p>
+        <AnimatePresence mode='wait'>
+          <Masonry
+            breakpointCols={breakpointColumns}
+            className="gallery-grid"
+            columnClassName="gallery-grid-column"
+          >
+            {filteredImages.map((image) => (
+              <motion.div 
+                key={image.id}
+                className="gallery-item"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: 20 }}
+                transition={{ duration: 0.5 }}
+                layout
+                whileHover={{ scale: 1.03 }}
+                onClick={() => setSelectedImage(image)}
+              >
+                <img src={image.src} alt={image.alt} />
+                <div className="image-overlay">
+                  <p>{image.alt}</p>
+                  <span>{image.category}</span>
                 </div>
-              </div>
-            </motion.div>
-          ))}
-        </Masonry>
+              </motion.div>
+            ))}
+          </Masonry>
+        </AnimatePresence>
 
-        {hasNextPage && (
-          <div ref={sentryRef} className="loading-more">
-            {isLoading && <div className="loader">Loading...</div>}
+        {selectedImage && (
+          <div className="image-modal" onClick={() => setSelectedImage(null)}>
+            <TransformWrapper>
+              <TransformComponent>
+                <img src={selectedImage.src} alt={selectedImage.alt} />
+              </TransformComponent>
+            </TransformWrapper>
+            <button className="close-button" onClick={() => setSelectedImage(null)}>
+              ×
+            </button>
           </div>
         )}
-
-        <AnimatePresence>
-          {selectedImage && (
-            <motion.div
-              className="lightbox"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-            >
-              <div className="lightbox-controls">
-                <button 
-                  className="lightbox-button"
-                  onClick={() => setSelectedImage(
-                    filteredItems[
-                      (filteredItems.findIndex(item => item.id === selectedImage.id) - 1 + filteredItems.length) 
-                      % filteredItems.length
-                    ]
-                  )}
-                >
-                  ←
-                </button>
-                <button 
-                  className="lightbox-button"
-                  onClick={toggleSlideshow}
-                >
-                  {isSlideshow ? '⏸' : '▶'}
-                </button>
-                <button 
-                  className="lightbox-button"
-                  onClick={() => setSelectedImage(
-                    filteredItems[
-                      (filteredItems.findIndex(item => item.id === selectedImage.id) + 1) 
-                      % filteredItems.length
-                    ]
-                  )}
-                >
-                  →
-                </button>
-                <button 
-                  className="lightbox-close"
-                  onClick={() => {
-                    setSelectedImage(null);
-                    setIsSlideshow(false);
-                    if (slideshowInterval) clearInterval(slideshowInterval);
-                  }}
-                >
-                  ×
-                </button>
-              </div>
-              
-              <TransformWrapper>
-                <TransformComponent>
-                  <img 
-                    src={selectedImage.image} 
-                    alt={selectedImage.title}
-                    className="lightbox-image"
-                  />
-                </TransformComponent>
-              </TransformWrapper>
-
-              <div className="lightbox-info">
-                <h3>{selectedImage.title}</h3>
-                <p>{selectedImage.description}</p>
-              </div>
-            </motion.div>
-          )}
-        </AnimatePresence>
-      </div>
+      </motion.div>
     </section>
   );
 }
