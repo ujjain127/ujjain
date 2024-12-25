@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/ujjain/static/css/main.2e8f2fde.css",
-    "main.js": "/ujjain/static/js/main.ab6ebb1d.js",
+    "main.css": "/ujjain/static/css/main.25a0007d.css",
+    "main.js": "/ujjain/static/js/main.cb532d83.js",
     "static/media/image7.JPG": "/ujjain/static/media/image7.efb4765d48dc38dadbea.JPG",
     "static/media/image2.JPG": "/ujjain/static/media/image2.5d91b296b59fd65d3ba0.JPG",
     "static/media/image1.JPG": "/ujjain/static/media/image1.c99d3090371db9235a49.JPG",
@@ -13,11 +13,11 @@
     "static/media/image8.jpg": "/ujjain/static/media/image8.10578e66817808edaabd.jpg",
     "static/media/hero.png": "/ujjain/static/media/hero.95e636f905e0b4e7b6e6.png",
     "index.html": "/ujjain/index.html",
-    "main.2e8f2fde.css.map": "/ujjain/static/css/main.2e8f2fde.css.map",
-    "main.ab6ebb1d.js.map": "/ujjain/static/js/main.ab6ebb1d.js.map"
+    "main.25a0007d.css.map": "/ujjain/static/css/main.25a0007d.css.map",
+    "main.cb532d83.js.map": "/ujjain/static/js/main.cb532d83.js.map"
   },
   "entrypoints": [
-    "static/css/main.2e8f2fde.css",
-    "static/js/main.ab6ebb1d.js"
+    "static/css/main.25a0007d.css",
+    "static/js/main.cb532d83.js"
   ]
 }
