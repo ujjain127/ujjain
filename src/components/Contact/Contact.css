@@ -224,8 +224,9 @@
 
 /* Add these light theme styles */
 [data-theme="light"] .contact-form {
-  background: var(--card-bg);
+  background: var(--bg-card);
   box-shadow: var(--shadow-md);
+  border: 1px solid var(--border-dark);
 }
 
 [data-theme="light"] .form-group label {
@@ -242,4 +243,10 @@
 [data-theme="light"] .form-group input:focus,
 [data-theme="light"] .form-group textarea:focus {
   border-color: var(--primary-orange);
+}
+
+[data-theme="light"] .contact-info {
+  background: var(--bg-card);
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--border-dark);
 } 

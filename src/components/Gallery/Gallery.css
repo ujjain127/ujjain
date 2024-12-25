@@ -292,4 +292,24 @@
     padding: 0.6rem 1.2rem;
     font-size: 0.85rem;
   }
+}
+
+[data-theme="light"] .gallery-item {
+  box-shadow: var(--shadow-md);
+}
+
+[data-theme="light"] .category-btn {
+  background: var(--bg-card);
+  border: 1px solid var(--border-dark);
+  color: var(--text-light);
+}
+
+[data-theme="light"] .category-btn:hover {
+  background: rgba(255, 140, 0, 0.1);
+  border-color: var(--primary-orange);
+}
+
+[data-theme="light"] .category-btn.active {
+  background: var(--primary-orange);
+  color: white;
 } 

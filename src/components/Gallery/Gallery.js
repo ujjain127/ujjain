@@ -59,7 +59,7 @@ function Gallery() {
     {
       id: 6,
       src: image6,
-      alt: "UiPhoria Inauguration 2.0",
+      alt: "UiPath Hack-a-bot",
       category: "UiPhoria"
     },
     {

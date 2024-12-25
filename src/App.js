@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import Navbar from './components/Navbar/Navbar';
 import ScrollProgress from './components/ScrollProgress/ScrollProgress';
-import ThemeSwitcher from './components/ThemeSwitcher/ThemeSwitcher';
 import Hero from './components/Hero/Hero';
 import About from './components/About/About';
 import Portfolio from './components/Portfolio/Portfolio';
@@ -28,7 +27,6 @@ function App() {
       <Gallery />
       <Contact />
       <Footer />
-      <ThemeSwitcher />
       <ScrollToTop />
     </div>
   );

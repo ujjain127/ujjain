@@ -96,4 +96,20 @@
   .project-card {
     padding: 1.2rem;
   }
+}
+
+[data-theme="light"] .project-card {
+  background: var(--bg-card);
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--border-dark);
+}
+
+[data-theme="light"] .project-description {
+  color: var(--text-light);
+}
+
+[data-theme="light"] .tech-tag {
+  background: rgba(255, 140, 0, 0.1);
+  color: var(--primary-orange);
+  border: 1px solid var(--border-orange);
 } 

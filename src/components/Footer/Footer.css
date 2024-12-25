@@ -91,4 +91,47 @@
   .footer-nav {
     align-items: center;
   }
+}
+
+/* Light theme styles */
+[data-theme="light"] .footer {
+  background: var(--bg-darker);
+}
+
+[data-theme="light"] .footer-section h3 {
+  color: var(--primary-orange);
+}
+
+[data-theme="light"] .footer-section h4 {
+  color: var(--text-dark);
+}
+
+[data-theme="light"] .footer-section p {
+  color: var(--text-light);
+}
+
+[data-theme="light"] .footer-nav a {
+  color: var(--text-light);
+}
+
+[data-theme="light"] .footer-nav a:hover {
+  color: var(--primary-orange);
+}
+
+[data-theme="light"] .social-links a {
+  color: var(--text-light);
+  background: rgba(0, 0, 0, 0.05);
+}
+
+[data-theme="light"] .social-links a:hover {
+  color: var(--primary-orange);
+  background: rgba(255, 140, 0, 0.1);
+}
+
+[data-theme="light"] .footer-bottom {
+  border-top: 1px solid var(--border-dark);
+}
+
+[data-theme="light"] .footer-bottom p {
+  color: var(--text-light);
 } 
