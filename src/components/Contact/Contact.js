@@ -181,7 +181,7 @@ function Contact() {
                   <FontAwesomeIcon icon={faLinkedin} />
                 </a>
                 <a 
-                  href="https://instagram.com/ujjainsriganesh" 
+                  href="https://www.instagram.com/ujjain127._/#" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="social-link"

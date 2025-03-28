@@ -37,14 +37,18 @@ function Experience() {
     },
     {
       id: 3,
-      role: "Technical Team",
-      company: "UiPhoria",
-      duration: "Dec 2024 - Present",
+      role: "Secretary",
+      company: "UiPhoria Automation Club",
+      duration: "Mar 2025 - Present",
       description: [
-        "Mentored junior students in competitive programming",
-        "Organized coding contests and practice sessions",
-        "Created problem-solving tutorials and resources",
-        "Helped students improve their algorithmic thinking"
+        "Managing club operations and coordinating RPA training sessions for 100+ members",
+        "Organizing weekly UiPath workshops and automation development challenges",
+        "Creating comprehensive learning paths for RPA development using UiPath Studio",
+        "Mentoring junior members in automation best practices and bot development",
+        "Maintaining documentation for club projects and automation workflows",
+        "Collaborating with industry partners for RPA certifications and training",
+        "Implementing project tracking systems for automation initiatives",
+        "Building and maintaining a repository of reusable automation components"
       ]
     }
   ];

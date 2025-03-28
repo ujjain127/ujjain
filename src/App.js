@@ -5,6 +5,7 @@ import Hero from './components/Hero/Hero';
 import About from './components/About/About';
 import Portfolio from './components/Portfolio/Portfolio';
 import Experience from './components/Experience/Experience';
+import Publications from './components/Publications/Publications';
 import Gallery from './components/Gallery/Gallery';
 import Contact from './components/Contact/Contact';
 import Footer from './components/Footer/Footer';
@@ -24,6 +25,7 @@ function App() {
       <About />
       <Portfolio />
       <Experience />
+      <Publications />
       <Gallery />
       <Contact />
       <Footer />

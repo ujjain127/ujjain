@@ -12,6 +12,7 @@ function Navbar() {
     { id: 'about', label: 'About' },
     { id: 'portfolio', label: 'Projects' },
     { id: 'experience', label: 'Experience' },
+    { id: 'publications', label: 'Publications' },
     { id: 'gallery', label: 'Gallery' },
     { id: 'contact', label: 'Contact' }
   ];
