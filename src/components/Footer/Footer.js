@@ -10,7 +10,7 @@ function Footer() {
         <div className="footer-content">
           <div className="footer-section">
             <h3>Ujjain S</h3>
-            <p>Pre-Final Year Student at Rajalakshmi Engineering College</p>
+            <p>Final Year Student at Rajalakshmi Engineering College</p>
           </div>
           
           <div className="footer-section">

@@ -164,7 +164,7 @@ function Gallery() {
               </TransformComponent>
             </TransformWrapper>
             <button className="close-button" onClick={() => setSelectedImage(null)}>
-              ×
+              
             </button>
           </div>
         )}
@@ -173,4 +173,4 @@ function Gallery() {
   );
 }
 
-export default Gallery; 
+export default Gallery;

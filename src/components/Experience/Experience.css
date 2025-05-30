@@ -98,12 +98,12 @@
 }
 
 .company {
-  color: var(--text-white);
+  color: #1A202C;
   font-weight: 500;
 }
 
 .duration {
-  color: var(--text-light);
+  color: #4A5568;
   font-size: 0.9rem;
 }
 
@@ -113,7 +113,7 @@
 }
 
 .responsibilities li {
-  color: var(--text-light);
+  color: #4A5568;
   margin-bottom: 0.8rem;
   padding-left: 1.5rem;
   position: relative;

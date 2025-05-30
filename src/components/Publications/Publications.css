@@ -22,7 +22,7 @@
   display: block;
   font-size: 0.875rem;
   font-weight: 500;
-  color: var(--first-color);
+  color: #FF8C00;
   text-transform: uppercase;
   letter-spacing: 2px;
   margin-bottom: 0.5rem;
@@ -30,7 +30,7 @@
 
 .section-title {
   font-size: 2.5rem;
-  color: var(--title-color);
+  color: #1A202C;
   margin-bottom: 1rem;
   position: relative;
   display: inline-block;
@@ -98,14 +98,14 @@
 .publication-title {
   font-size: 1.35rem;
   margin-bottom: 1.25rem;
-  color: var(--title-color);
+  color: #1A202C;
   font-weight: 600;
   line-height: 1.4;
 }
 
 .publication-authors {
   font-size: 1rem;
-  color: var(--text-color);
+  color: #4A5568;
   margin-bottom: 1.25rem;
   font-style: italic;
   line-height: 1.6;

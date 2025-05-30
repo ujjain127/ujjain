@@ -10,17 +10,14 @@ function Experience() {
   });
 
   const experiences = [
-    {
-      id: 1,
+    {      id: 1,
       role: "Chairperson",
       company: "IEEE TEMS REC",
       duration: "Jun 2023 - Dec 2024",
       description: [
         "Leading a team of 50+ members in organizing technical events and workshops",
         "Successfully organized IEEE TEMS Inauguration with 100+ participants",
-        "Coordinated with industry experts for guest lectures and technical sessions",
-        "Implemented innovative strategies to increase student engagement in technical activities",
-        "Managing and overseeing various technical and non-technical events throughout the year"
+        "Coordinated with industry experts for guest lectures and technical sessions"
       ]
     },
     {
@@ -31,7 +28,6 @@ function Experience() {
       description: [
         "Developed and implemented automated solutions using UiPath Studio",
         "Worked on process automation for document processing and data extraction",
-        "Collaborated with team members to optimize automation workflows",
         "Reduced manual processing time by 60% through automation solutions"
       ]
     },
@@ -43,13 +39,9 @@ function Experience() {
       description: [
         "Managing club operations and coordinating RPA training sessions for 100+ members",
         "Organizing weekly UiPath workshops and automation development challenges",
-        "Creating comprehensive learning paths for RPA development using UiPath Studio",
-        "Mentoring junior members in automation best practices and bot development",
-        "Maintaining documentation for club projects and automation workflows",
-        "Collaborating with industry partners for RPA certifications and training",
-        "Implementing project tracking systems for automation initiatives",
-        "Building and maintaining a repository of reusable automation components"
+        "Mentoring junior members in automation best practices and bot development"
       ]
+      
     }
   ];
 

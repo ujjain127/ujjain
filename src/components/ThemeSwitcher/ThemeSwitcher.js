@@ -5,11 +5,12 @@ import { faSun, faMoon } from '@fortawesome/free-solid-svg-icons';
 import './ThemeSwitcher.css';
 
 function ThemeSwitcher() {
-  const [isDark, setIsDark] = useState(true);
+  const [isDark, setIsDark] = useState(false);
 
   useEffect(() => {
     const savedTheme = localStorage.getItem('theme');
-    const theme = savedTheme || 'dark';
+    // Default to light theme if no saved preference
+    const theme = savedTheme || 'light';
     setIsDark(theme === 'dark');
     document.documentElement.setAttribute('data-theme', theme);
   }, []);
@@ -27,10 +28,18 @@ function ThemeSwitcher() {
       onClick={toggleTheme}
       whileHover={{ scale: 1.1 }}
       whileTap={{ scale: 0.9 }}
+      aria-label={`Switch to ${isDark ? 'light' : 'dark'} mode`}
     >
-      <FontAwesomeIcon icon={isDark ? faSun : faMoon} />
+      <motion.div
+        className="theme-switcher-icon-container"
+        initial={false}
+        animate={{ rotate: isDark ? 0 : 180 }}
+        transition={{ duration: 0.5, ease: "easeInOut" }}
+      >
+        <FontAwesomeIcon icon={isDark ? faSun : faMoon} className="theme-icon" />
+      </motion.div>
     </motion.button>
   );
 }
 
-export default ThemeSwitcher; 
+export default ThemeSwitcher;

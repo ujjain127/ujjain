@@ -15,7 +15,7 @@
 }
 
 .section-subtitle {
-  color: var(--primary-orange);
+  color: #FF8C00;
   font-size: 1.1rem;
   font-weight: 500;
   margin-bottom: 1rem;
@@ -23,14 +23,14 @@
 }
 
 .section-title {
-  color: var(--text-white);
+  color: #1A202C;
   font-size: 2.5rem;
   font-weight: 700;
   margin-bottom: 1rem;
 }
 
 .section-description {
-  color: var(--text-light);
+  color: #4A5568;
   font-size: 1.1rem;
   max-width: 600px;
   margin: 0 auto;
@@ -45,11 +45,11 @@
 }
 
 .contact-form {
-  background: rgba(255, 255, 255, 0.03);
+  background: white;
   padding: 2.5rem;
   border-radius: 12px;
-  border: 1px solid rgba(255, 140, 0, 0.1);
-  backdrop-filter: blur(10px);
+  border: 1px solid #E2E8F0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
 .form-group {
@@ -58,7 +58,7 @@
 
 .form-group label {
   display: block;
-  color: var(--text-light);
+  color: var(--text-dark);
   margin-bottom: 0.5rem;
   font-weight: 500;
 }
@@ -67,10 +67,10 @@
 .form-group textarea {
   width: 100%;
   padding: 0.8rem 1rem;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: #F7FAFC;
+  border: 1px solid #E2E8F0;
   border-radius: 6px;
-  color: var(--text-white);
+  color: var(--text-dark);
   font-size: 1rem;
   transition: all 0.3s ease;
 }
@@ -78,8 +78,9 @@
 .form-group input:focus,
 .form-group textarea:focus {
   outline: none;
-  border-color: var(--primary-orange);
-  background: rgba(255, 255, 255, 0.08);
+  border-color: var(--primary-accent);
+  background: white;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
 }
 
 .form-group input.error,
@@ -96,7 +97,7 @@
 .submit-button {
   width: 100%;
   padding: 1rem;
-  background: var(--primary-orange);
+  background: var(--primary-accent);
   color: white;
   border: none;
   border-radius: 6px;
@@ -107,9 +108,9 @@
 }
 
 .submit-button:hover {
-  background: var(--accent-orange-dark);
+  background: #2563EB;
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(255, 140, 0, 0.2);
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.2);
 }
 
 .submit-button:disabled {
@@ -137,10 +138,11 @@
 }
 
 .contact-info {
-  background: rgba(255, 255, 255, 0.03);
+  background: white;
   padding: 2.5rem;
   border-radius: 12px;
-  border: 1px solid rgba(255, 140, 0, 0.1);
+  border: 1px solid #E2E8F0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
 .info-item {
@@ -152,13 +154,13 @@
 }
 
 .info-item h3 {
-  color: var(--primary-orange);
+  color: var(--primary-accent);
   font-size: 1.2rem;
   margin-bottom: 0.5rem;
 }
 
 .info-item p {
-  color: var(--text-light);
+  color: var(--text-dark);
   font-size: 1.1rem;
 }
 
