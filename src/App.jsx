@@ -28,7 +28,7 @@ function HomePage() {
 
 function App() {
   return (
-    <Router>
+    <Router basename="/">
       <div className="app">
         <Routes>
           <Route path="/" element={<HomePage />} />
