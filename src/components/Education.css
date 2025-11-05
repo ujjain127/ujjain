@@ -1,0 +1,110 @@
+.education-content {
+  max-width: 1000px;
+}
+
+.education-item {
+  background: #1a1a1a;
+  padding: 2rem;
+  border-radius: 0;
+  margin-bottom: 2rem;
+  border-left: 2px solid #ffffff;
+  transition: all 0.3s ease;
+}
+
+.education-item:hover {
+  background: #222;
+  transform: translateX(10px);
+}
+
+.education-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.education-header h3 {
+  font-size: clamp(1.2rem, 2vw, 1.5rem);
+  color: #ffffff;
+  flex: 1;
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.year {
+  font-weight: 300;
+  color: #999;
+  background-color: transparent;
+  padding: 0.5rem 1rem;
+  border: 1px solid #333;
+  border-radius: 0;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.degree {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  color: #999;
+  font-weight: 300;
+}
+
+.grade {
+  font-weight: 300;
+  color: #666;
+  font-size: 0.95rem;
+}
+
+.coursework {
+  margin-top: 3rem;
+}
+
+.coursework h3 {
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #ffffff;
+}
+
+.coursework-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1px;
+  background-color: #222;
+}
+
+.course-tag {
+  background-color: #0a0a0a;
+  border: none;
+  border-radius: 0;
+  padding: 1.5rem;
+  text-align: center;
+  font-weight: 300;
+  font-size: 0.85rem;
+  transition: all 0.3s ease;
+  cursor: default;
+  color: #999;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.course-tag:hover {
+  background-color: #1a1a1a;
+  color: #ffffff;
+}
+
+@media (max-width: 768px) {
+  .education-header {
+    flex-direction: column;
+  }
+
+  .coursework-grid {
+    grid-template-columns: 1fr;
+  }
+}

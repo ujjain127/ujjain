@@ -1,0 +1,220 @@
+.contact-section {
+  padding-bottom: 2rem;
+  background: linear-gradient(135deg, #2a2a2a 0%, #0a0a0a 30%, #4a4a4a 50%, #0a0a0a 70%, #2a2a2a 100%);
+  background-size: 400% 400%;
+  animation: gradientShift 25s ease infinite;
+  color: #ffffff;
+}
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.contact-content {
+  max-width: 100%;
+  margin: 0 auto;
+  margin-top: 0;
+  padding-top: 6rem;
+  padding-left: 4rem;
+  padding-right: 4rem;
+}
+
+.contact-intro {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  line-height: 1.6;
+  text-align: justify;
+  margin-bottom: 4rem;
+  color: #ffffff;
+  font-weight: 300;
+  letter-spacing: 0.01em;
+}
+
+.contact-intro .center-line {
+  display: block;
+  text-align: center;
+  margin-top: 0.5rem;
+}
+
+.lets-talk-button {
+  display: inline-block;
+  padding: 2rem 6rem;
+  font-size: clamp(1.5rem, 3vw, 2.5rem);
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+  color: #ffffff;
+  background: transparent;
+  border: 3px solid #ffffff;
+  border-radius: 100px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 3rem;
+}
+
+.lets-talk-button:hover {
+  background: #ffffff;
+  color: #0a0a0a;
+}
+
+.social-links {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  background-color: #222;
+}
+
+.social-link {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1.5rem 2rem;
+  background: #0a0a0a;
+  border-radius: 0;
+  text-decoration: none;
+  color: #999;
+  transition: all 0.3s ease;
+  border-left: 2px solid transparent;
+}
+
+.social-link:hover {
+  background: #1a1a1a;
+  border-left-color: #ffffff;
+  padding-left: 2.5rem;
+}
+
+.link-icon {
+  font-size: 1.5rem;
+  flex-shrink: 0;
+  filter: grayscale(1);
+}
+
+.link-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.link-label {
+  font-weight: 300;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  color: #666;
+  letter-spacing: 0.1em;
+}
+
+.link-text {
+  font-size: 1rem;
+  color: #999;
+  font-weight: 300;
+  transition: color 0.3s ease;
+}
+
+.social-link:hover .link-text {
+  color: #ffffff;
+}
+
+.footer {
+  margin-top: 8rem;
+  padding: 3rem 2rem 2rem 2rem;
+  text-align: center;
+  color: #999;
+  border-top: 1px solid #333;
+  font-weight: 300;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 1.5rem;
+  font-size: clamp(0.9rem, 1.5vw, 1.1rem);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+}
+
+.footer-links a {
+  color: #ffffff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: #0066cc;
+}
+
+.footer-links .separator {
+  color: #666;
+}
+
+.footer p {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #666;
+}
+
+@media (max-width: 768px) {
+  .contact-content {
+    padding: 4rem 2rem 0 2rem;
+  }
+
+  .contact-intro {
+    font-size: clamp(1.5rem, 5vw, 2rem);
+    margin-bottom: 3rem;
+  }
+
+  .lets-talk-button {
+    padding: 1.5rem 4rem;
+    font-size: clamp(1.1rem, 3.5vw, 1.5rem);
+    letter-spacing: 0.2em;
+  }
+
+  .footer {
+    margin-top: 5rem;
+    padding: 2rem 1rem 1.5rem 1rem;
+  }
+
+  .footer-links {
+    flex-direction: column;
+    gap: 1rem;
+    font-size: 0.85rem;
+  }
+
+  .footer-links .separator {
+    display: none;
+  }
+
+  .footer p {
+    font-size: 0.7rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-content {
+    padding: 3rem 1rem 0 1rem;
+  }
+
+  .contact-intro {
+    font-size: 1.3rem;
+  }
+
+  .lets-talk-button {
+    padding: 1.2rem 3rem;
+    font-size: 1rem;
+  }
+
+  .footer-links {
+    font-size: 0.75rem;
+  }
+}

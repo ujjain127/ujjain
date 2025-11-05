@@ -1,0 +1,114 @@
+.hero-section {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 2rem;
+  background-color: #ffffff;
+  position: relative;
+  width: 100%;
+}
+
+.hero-container {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.hero-name-background {
+  position: absolute;
+  font-size: clamp(8rem, 20vw, 25rem);
+  line-height: 0.85;
+  font-weight: 900;
+  text-transform: uppercase;
+  color: rgba(0, 0, 0, 0.06);
+  letter-spacing: -0.02em;
+  text-align: center;
+  z-index: 1;
+  user-select: none;
+  pointer-events: none;
+  margin-top: 3rem;
+}
+
+.hero-photo-container {
+  position: relative;
+  z-index: 2;
+  margin-top: -12rem;
+}
+
+.hero-photo {
+  width: clamp(350px, 38vw, 500px);
+  height: clamp(480px, 52vw, 680px);
+  background-color: #f0f0f0;
+  background-image: url('../assets/hero.jpg');
+  background-size: cover;
+  background-position: center;
+  border-radius: 30px;
+  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.18);
+}
+
+.hero-subtitle {
+  position: relative;
+  z-index: 3;
+  margin-top: 6rem;
+  font-size: clamp(0.9rem, 1.6vw, 1.1rem);
+  font-weight: 400;
+  color: #555;
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .hero-section {
+    min-height: 80vh;
+    padding: 2rem 1rem;
+  }
+
+  .hero-container {
+    height: 50vh;
+    margin-top: 1rem;
+  }
+
+  .hero-name-background {
+    font-size: clamp(4rem, 15vw, 6rem);
+    margin-top: 2rem;
+  }
+
+  .hero-photo {
+    width: clamp(250px, 70vw, 320px);
+    height: clamp(340px, 95vw, 440px);
+    border-radius: 20px;
+  }
+
+  .hero-photo-container {
+    margin-top: -4rem;
+  }
+
+  .hero-subtitle {
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+    margin-top: 3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-name-background {
+    font-size: 3.5rem;
+  }
+
+  .hero-photo {
+    width: 220px;
+    height: 300px;
+  }
+
+  .hero-subtitle {
+    font-size: 0.65rem;
+  }
+}

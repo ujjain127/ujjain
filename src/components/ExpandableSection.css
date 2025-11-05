@@ -1,0 +1,95 @@
+.expandable-section {
+  border-bottom: 1px solid #222;
+  margin-bottom: 0;
+}
+
+.expandable-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 0;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.expandable-header:hover {
+  padding-left: 1rem;
+}
+
+.expandable-header:hover h3 {
+  color: #ffffff;
+}
+
+.expandable-header h3 {
+  font-size: clamp(1.5rem, 3vw, 2.5rem);
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #999;
+  transition: color 0.3s ease;
+  margin: 0;
+}
+
+.expand-icon {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #999;
+  transition: color 0.3s ease;
+  flex-shrink: 0;
+}
+
+.expandable-header:hover .expand-icon {
+  color: #ffffff;
+}
+
+.expandable-content {
+  overflow: hidden;
+}
+
+.content-inner {
+  padding: 0 0 2rem 0;
+  color: #999;
+  line-height: 1.8;
+}
+
+.content-inner p {
+  margin-bottom: 1rem;
+  font-weight: 300;
+}
+
+.content-inner ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.content-inner li {
+  padding-left: 1.5rem;
+  margin-bottom: 0.75rem;
+  position: relative;
+  line-height: 1.6;
+}
+
+.content-inner li::before {
+  content: '—';
+  position: absolute;
+  left: 0;
+  color: #666;
+}
+
+@media (max-width: 768px) {
+  .expandable-header {
+    padding: 1.5rem 0;
+  }
+
+  .expandable-header h3 {
+    font-size: 1.5rem;
+  }
+
+  .expand-icon {
+    width: 30px;
+    height: 30px;
+  }
+}
